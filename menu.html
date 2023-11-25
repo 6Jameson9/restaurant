@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='style.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iXNSLZGG8TRaPQTwfs2ZuOD+Pomp/4WTdFfS5L8IFpK1BBd5K9aSN7Zj" crossorigin="anonymous">
+    <link rel="icon" href="imagess/logo.ico" type="image/x-icon">
+    <script src='app.js'></script>
+    <title>Menu</title>
+</head>
+<body>
+
+<div class='menu'>
+
+    <div class='container'>
+
+        <div class='menu-title'>
+            Our menu
+        </div>
+
+        <div class='menu-items'>
+
+            <div class='menu-item'>
+                <div class='menu-image'>
+                    <img src='imagess/burger-1.png' class='menu-img'>
+                </div>
+
+                <div class='menu-text'>
+                    Hamburger maxi
+                </div>
+
+                <div class='menu-subtext'>
+                    The thickest <br> layer of meat
+                </div>
+
+                <div class='menu-button'>
+                    <button id="add-to-cart-01" class="cart-button" onclick="addToCart('Hamburger maxi', 3.79)">3.79 $</button>
+                </div>
+            </div>
+
+            <div class='menu-item'>
+                <div class='menu-image'>
+                    <img src='imagess/burger-2.png' class='menu-img'>
+                </div>
+
+                <div class='menu-text'>
+                    Hamburger Prime
+                </div>
+
+                <div class='menu-subtext'>
+                    That same <br> ideal
+                </div>
+
+                <div class='menu-button'>
+                    <button id="add-to-cart-02" class="cart-button" onclick="addToCart('Hamburger Prime', 4.99)">4.99 $</button>
+                </div>
+            </div>
+
+            <div class='menu-item'>
+                <div class='menu-image'>
+                    <img src='imagess/burger-3.png' class='menu-img'>
+                </div>
+
+                <div class='menu-text'>
+                    Chickenburger
+                </div>
+
+                <div class='menu-subtext'>
+                    It was alive <br> but now it's not
+                </div>
+
+                <div class='menu-button'>
+                    <button id="add-to-cart-03" class="cart-button" onclick="addToCart('Chickenburger', 3.49)">3.49 $</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Мини-окошко -->
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <h2>Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: <span id="total-price">$0.00</span></p>
+            <div>
+                <button class="modal-cart-button" onclick="clearCart()">Clear</button>
+                <button class="modal-cart-button" onclick="addModal()">Add</button>
+            </div>
+            <br>
+        <div>
+            <input type="email" id="email" placeholder="Email" /> <br> <br>
+            <input type="text" id="address" placeholder="Adress"> <br>
+            <select>
+                <option value="pickup">PickUp</option>
+                <option value="delivery">Delivery</option>
+            </select> <br> <br>
+            <p>Payment method:</p>
+            <select id="payment-method">
+                <option value="Visa">Visa</option>
+                <option value="MasterCard">MasterCard</option>
+            </select> <br>
+            <input type="text" id="credit-card" placeholder="Card number"> <br> <br>
+            <textarea id="comment" placeholder="Comments on the order"></textarea> <br> <br>
+            <button class="modal-cart-button" type="submit" onclick="confirmOrder()">Confirm</button>
+            <button class="modal-cart-button" onclick="closeCartModal()">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно для подтверждения заказа -->
+<div id="confirm-modal" class="modal">
+    <div class="modal-content">
+        <h2>Confirm the order</h2>
+        <p>Total: <span id="confirm-total-price">$0.00</span></p>
+        <div>
+            <button class="modal-cart-button" onclick="placeOrder()">Confirm</button>
+            <button class="modal-cart-button" onclick="cancelOrder()">Cansel</button>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно для благодарности -->
+<div id="thank-you-modal" class="modal">
+    <div class="modal-content">
+        <h2>Thanks for your order</h2>
+        <p>Your order has been successfully placed!</p>
+        <button class="modal-cart-button" onclick="closeAllModals()">Close</button>
+    </div>
+</div>
+
+<div class='footer'>
+    Jameson 2023
+</div>
+<script src='app.js'></script>
+
+</body>
+</html>

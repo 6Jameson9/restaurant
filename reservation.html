@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel='stylesheet' href='style.css'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iXNSLZGG8TRaPQTwfs2ZuOD+Pomp/4WTdFfS5L8IFpK1BBd5K9aSN7Zj" crossorigin="anonymous">
+        <link rel="icon" href="imagess/logo.ico" type="image/x-icon">
+        <script src='app.js'></script>
+        <title>Reservation</title>
+    </head>
+    <body>
+        
+        <section class = "banner">
+            <h2>BOOK YOUR TABLE NOW</h2>
+            <div class = "card-container">
+                <div class = "card-img"></div>
+
+                <div class = "card-content">
+                    <form> <br>
+                        <div class = "form-row">
+                            <select name = "days">
+                                <option value = "day-select">Select Day</option>
+                                <option value = "sunday">Sunday</option>
+                                <option value = "monday">Monday</option>
+                                <option value = "tuesday">Tuesday</option>
+                                <option value = "wednesday">Wednesday</option>
+                                <option value = "thursday">Thursday</option>
+                                <option value = "friday">Friday</option>
+                                <option value = "saturday">Saturday</option>
+                            </select>
+
+                            <select name = "hours">
+                                <option value = "hour-select">Select Hour</option>
+                                <option value = "10">10: 00</option>
+                                <option value = "10">12: 00</option>
+                                <option value = "10">14: 00</option>
+                                <option value = "10">16: 00</option>
+                                <option value = "10">18: 00</option>
+                                <option value = "10">20: 00</option>
+                                <option value = "10">22: 00</option>
+                            </select>
+                        </div>
+
+                        <div class = "form-row">
+                            <input type = "text" placeholder="Full Name">
+                            <input type = "text" placeholder="Phone Number">
+                        </div>
+
+                        <div class = "form-row">
+                            <input type = "number" placeholder="How Many Persons?" min = "1">
+                            <select>
+                                <option>Where do you prefer to sit?</option>
+                                <option>Near the window</option>
+                                <option>In the middle of Hall</option>
+                                <option>At the exit</option>
+                            </select>
+                        </div>
+
+                        <div class = "form-row">
+                            <input type = "text" placeholder="What music?">
+                            <select>
+                                <option>What type of event?</option>
+                                <option>Date</option>
+                                <option>Birthday</option>
+                                <option>Banquet</option>
+                            </select>
+                        </div>
+
+                        <div class = "form-row">
+                            <input type = "text" placeholder="Additional requirements">
+                            <form action="server_script.php" method="post">
+                                <input type="submit" value="BOOK TABLE" onclick="bookTable()">
+                            </form>
+                        </div>
+                    </form>
+                </div>
+            </div> <br> <br>
+            <a class='nav-item' href="index.html">GO BACK TO HOME PAGE</a>
+            <br>
+        </section>
+        <script src='app.js'></script>
+    </body>
+</html>
